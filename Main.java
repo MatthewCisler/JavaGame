@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-class Main   {
+public class Main {
     public static void main(String[] args) {
         int lowNumber;
         int highNumber;
@@ -10,54 +10,42 @@ class Main   {
         int answer;
         int userAnswer;
         int total;
-        double x;
-        double y;
-        boolean value = false;
-
-        
         System.out.println("Hello World!");
-        
+
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
-
 
         System.out.print("Please enter the lowest value you would like to multiply today. ");
         lowNumber = sc.nextInt();
         System.out.print("Please enter the highest value you would like to multiply today. ");
         highNumber = sc.nextInt();
 
-
-
-
-        //System.out.println(firstRand);
-        //System.out.println(secondRand);
-        //System.out.println(answer);
-
         System.out.print("How many math problems would you like to do? ");
         total = sc.nextInt();
+        userAnswer = 0;
+        boolean value = false;
+        for (int i = 0; i < total; ++i) {
 
-        int counter = 0;
-        while (counter < total) {
-
-            while (value = true)  {
+            userAnswer = 0;
+            while (!value) {
+                userAnswer = 0;
                 firstRand = rand.nextInt(highNumber) + lowNumber;
                 secondRand = rand.nextInt(highNumber) + lowNumber;
-        
+
                 answer = (firstRand * secondRand);
-                
+
                 System.out.printf("What is %d x %d? ", firstRand, secondRand);
                 userAnswer = sc.nextInt();
 
-                if (userAnswer == answer)   {
+                if (userAnswer == answer) {
                     System.out.println("Good job!");
                     value = true;
-                }
-                else    {
+                } else {
                     System.out.println("That was wrong, please try again");
-                    value = false;
                 }
-                counter++;
             }
+            userAnswer = 0;
+            value = false;
         }
     }
 }
