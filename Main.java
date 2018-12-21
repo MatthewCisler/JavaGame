@@ -26,11 +26,11 @@ public class Main {
         boolean value = false;
         for (int i = 0; i < total; ++i) {
 
-            userAnswer = 0;
+            firstRand = rand.nextInt(highNumber) + lowNumber;
+            secondRand = rand.nextInt(highNumber) + lowNumber;
+
             while (!value) {
                 userAnswer = 0;
-                firstRand = rand.nextInt(highNumber) + lowNumber;
-                secondRand = rand.nextInt(highNumber) + lowNumber;
 
                 answer = (firstRand * secondRand);
 
