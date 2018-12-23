@@ -17,6 +17,8 @@ public class Main {
         total = sc.nextInt();
         userAnswer = 0;
         boolean value = false;
+        int correct = 0;
+        int notCorrect = 0;
         for (int i = 0; i < total; ++i) {
 
             int firstRand = rand.nextInt(highNumber - lowNumber) + lowNumber;
@@ -33,13 +35,16 @@ public class Main {
                 if (userAnswer == answer) {
                     System.out.println("Good job!");
                     value = true;
+                    correct++;
                 } else {
                     System.out.println("That was wrong, please try again");
+                    notCorrect++;
                 }
             }
             userAnswer = 0;
             value = false;
         }
+        System.out.printf("You have answered %d correctly and %d incorrectly.%n",correct, notCorrect);
     }
 
     private static int getInt(Scanner sc, String prompt)    {
