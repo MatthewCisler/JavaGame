@@ -10,6 +10,13 @@ public class GameFunctions {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
 
+        System.out.println();
+        System.out.println("This is practice a practice session for using multiplication. To use this,");
+        System.out.println("give the lowest value and the highest value you would want to use to multiply");
+        System.out.println("then the amount of problems you would like to solve. At the end, the program");
+        System.out.println("will give the number of times you answered correctly and incorrectly.");
+        System.out.println();
+
         int lowNumber = getInt(sc, "Please enter the lowest value you would like to multiply today. ");
         int highNumber = getCorrectIntValue(sc, "Please enter the highest value you would like to multiply today. ",
                 lowNumber);
@@ -28,9 +35,7 @@ public class GameFunctions {
                 userAnswer = 0;
 
                 answer = (firstRand * secondRand);
-
-                System.out.printf("What is %d x %d? ", firstRand, secondRand);
-                userAnswer = sc.nextInt();
+                userAnswer = getInt(sc, "What is " + firstRand + " x " + secondRand + "? ");
 
                 if (userAnswer == answer) {
                     System.out.println("Good job!");
@@ -47,6 +52,7 @@ public class GameFunctions {
         System.out.printf("You have answered %d correctly and %d incorrectly.%n", correct, notCorrect);
     }
 
+    // Validations, do not put "Game" classes underneath these.
     private static int getInt(Scanner sc, String prompt) {
         int i = 0;
         boolean valid = false;
