@@ -126,6 +126,7 @@ public class GameFunctions {
         String resultsWon = "You won!";
         String resultsLost = "You Lost!";
 
+        // Tells which is which on the user side
         if (userAns == 1) {
             userAnsString = "Rock";
         } else if (userAns == 2) {
@@ -134,6 +135,7 @@ public class GameFunctions {
             userAnsString = "Scissors";
         }
 
+        // Tells which is which on the computer side
         if (compAns == 1) {
             compAnsString = "Rock";
         } else if (compAns == 2) {
@@ -142,12 +144,27 @@ public class GameFunctions {
             compAnsString = "Scissors";
         }
 
+        // results if user throws rock
         if (compAns == userAns) {
             System.out.print(resultsTie);
         } else if (userAns == 1 & compAns == 3) {
             System.out.println(resultsWon);
         } else if (userAns == 1 & compAns == 2) {
             System.out.println(resultsLost);
+        }
+
+        // results if user throws paper
+        if (userAns == 2 & compAns == 1)    {
+            System.out.print(resultsWon);
+        } else if (userAns == 2 & compAns == 3) {
+            System.out.print(resultsLost);
+        }
+
+        // results if user throws Scissors
+        if (userAns == 3 & compAns ==1) {
+            System.out.print(resultsLost);
+        } else if (userAns == 3 & compAns == 2) {
+            System.out.print(resultsWon);
         }
 
     }
